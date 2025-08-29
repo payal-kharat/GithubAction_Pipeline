@@ -1,17 +1,33 @@
-name : "hello world workflow"
+name : "githubaction workflow"
 
 on:
   push:
     branches:
       -master
       -production
+  
+      
+  pull_request:
+    branches :
+      -master
+      -test    
 
 
 jobs:
-  hello_world:
+   on-push:
+    if: github.event_name == 'push'
     runs-on : ubuntu_latest
     steps:
-      - name: "print hello world"
-        run: echo "hello world"
+      - name: "push code successfully"
+        run: echo "push code successfully"
+
+
+
+   on-pull-request:
+    if: github.event_name=='pull_request'
+    runs-on : ubuntu_latest
+    steps:
+      - name: "push code successfully"
+        run: echo "push code successfully"
 
 
