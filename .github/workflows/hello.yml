@@ -1,4 +1,4 @@
-name : "githubaction workflow"
+name : " multitasking pipeline githubaction workflow"
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
   pull_request:
     branches :
       -master
-      -test    
+         
 
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
 
 
    on-pull-request:
-    if: github.event_name=='pull_request'
+    if: github.event_name == 'pull_request'
     runs-on : ubuntu_latest
     steps:
       - name: "push code successfully"
